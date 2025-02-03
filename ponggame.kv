@@ -1,0 +1,50 @@
+<Racket>:
+    size_hint: 1, 1
+    pos: 0, 0
+
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+
+        Rectangle:
+            pos: self._leftbottom.x, self._leftbottom.y
+            size: self.WIDTH, self.HEIGHT
+
+
+<Ball>:
+    size_hint: 1, 1
+    pos: 0, 0
+
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+
+        Ellipse:
+            pos: self._leftbottom.x, self._leftbottom.y
+            size: 2 * self.RADIUS, 2 * self.RADIUS
+
+<Score>:
+    size_hint: 1, 1
+    pos: 0, 0
+
+    Label:
+        id: show
+        text:
+            f"{root.sc1}       {root.sc2}"
+        size: root.size
+        font_size: 70
+        y: root.size[1] * 1 / 3
+
+
+<RootLayout>
+    Score:
+        id: score
+
+    Racket:
+        id: player_a
+
+    Racket:
+        id: player_b
+
+    Ball:
+        id: ball
